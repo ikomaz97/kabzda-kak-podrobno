@@ -3,5 +3,10 @@ import {action} from '@storybook/addon-actions'
 import {Select} from './Select'
 
 export default  {
-    title: 'Select'
+    title: 'Select',
+    component: Select,
 }
+
+
+
+export const EmptyRating = () => <Select onChange = {action('Value changed')}/>
