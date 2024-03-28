@@ -27,9 +27,14 @@ function App(props: any) {
                 titleValue={'Menu'}
                 collapsed={accordionCollapsed}
                 onChange={() => setAccordionCollapsed(!accordionCollapsed)}
-             items={[]} onClick={()=>{}}/>
+                items={[]}
+                onClick={() => {}} // Передайте пустую функцию
+            />
 
-            <UncontrolledAccordion titleValue={'Menu'} />
+            <UncontrolledAccordion
+                titleValue={'Menu'}
+                onClick={() => {}} // Передайте пустую функцию
+            />
             <UncontrolledOnOff onChange={setSwitchOn} />
             {switchOn.toString()}
         </div>
