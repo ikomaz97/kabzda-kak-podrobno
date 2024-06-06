@@ -1,15 +1,21 @@
 import { action } from '@storybook/addon-actions';
 import {UncontrolledAccordion} from './UncontrolledAccordion';
 import React, {useState} from "react";
-export default  {
+
+export default {
     title: 'UncontrolledAccordion',
     component: UncontrolledAccordion,
 };
 
-const callback = action('accordion mode change event fired'); // Используйте `action` здесь
-
 export const ModeChanging = () => {
-    return     <UncontrolledAccordion titleValue={"Users"}  />;
+    const callback = action('accordion mode change event fired');
 
+    const [isOpen, setIsOpen] = useState(false);
 
-}
+    const handleAccordionClick = () => {
+        setIsOpen(prevState => !prevState);
+        callback(); // Вызовите `action` при изменении состояния аккордеона
+    };
+
+    return <UncontrolledAccordion titleValue={"Users"} onClick={handleAccordionClick} />;
+};
