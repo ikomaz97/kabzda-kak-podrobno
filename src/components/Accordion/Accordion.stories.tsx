@@ -21,10 +21,11 @@ export const OpenedAccordion = () => {
     return <Accordion titleValue={'Users'}
                       collapsed={false}
                       onChange={callback}
-                      items={[{title: 'Dimych', value: 1}, {title: "Valera", value: 2}, {
-                          title: 'Artem',
-                          value: 3
-                      }, {title: 'Victor', value: 4},]}
+                      items={[{title: 'Dimych', value: 1},
+                          {title: "Valera", value: 2},
+                          {title: 'Artem', value: 3},
+                          {title: 'Victor', value: 4},
+                      ]}
                       onClick={onClickCallback}
     />
 };
