@@ -19,6 +19,10 @@ export const SetTimeoutExample = () => {
         return () => clearInterval(interval); // Очищаем интервал при размонтировании
     }, []);
 
+    useEffect(() => {
+        document.title = timeString; // Обновляем заголовок документа
+    }, [timeString]); // Этот эффект будет запускаться, когда изменяется timeString
+
     return (
         <>
             Hello, time: {timeString}
