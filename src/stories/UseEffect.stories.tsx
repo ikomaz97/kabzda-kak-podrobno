@@ -5,21 +5,23 @@ export default {
 }
 
 export const SetTimeoutExample = () => {
-    const [counter, setCounter] = useState(1);
-    console.log('SetTimeoutExample');
-const time = new Date();
+    const [timeString, setTimeString] = useState("");
 
     useEffect(() => {
         const interval = setInterval(() => {
-            setCounter(time => time + 1);
+            const time = new Date();
+            const hours = time.getHours();
+            const minutes = time.getMinutes();
+            const seconds = time.getSeconds();
+            setTimeString(`${hours}:${minutes}:${seconds}`); // Объединяем часы, минуты и секунды в строку
         }, 1000);
 
-        return () => clearInterval(interval); // Очистка интервала при размонтировании компонента
+        return () => clearInterval(interval); // Очищаем интервал при размонтировании
     }, []);
 
     return (
         <>
-            Hello, counter: {counter}
+            Hello, time: {timeString}
         </>
     );
 }
